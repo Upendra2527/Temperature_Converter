@@ -1,0 +1,119 @@
+<html>
+<head>
+    <style>
+        body {
+            background-image: linear-gradient(180deg, #694ef3 30%, rgb(235, 16, 16) 120%);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 7px rgb(24, 205, 45) solid;
+            background-color:rgb(34, 34, 221,0.3);
+            width: 40%;
+            height: 60vh;
+            border-radius: 30px;
+            margin: 150px auto;
+            color: rgb(244, 146, 146);
+            text-align: center;
+        }
+        .container:hover{
+            background-color:rgba(240, 54, 63, 0.3);
+            
+        }
+
+        .inner-container {
+            color: rgb(249, 241, 242);
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        input {
+            background-color:rgba(244, 7, 11,0.6);
+            width: 370px;
+            height: 37px;
+            border-radius: 30px;
+            font-size: 16px; /* Modified font size */
+        }
+        input:hover{
+            background-color:rgb(20, 20, 200);
+        }
+        input[type="text"] {
+            color:white;
+            font-weight: bold;
+            font-size: 18px; /* Modified font size */
+        }
+
+        .button-submit {
+            width: 170px;
+            height: 33px;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.3s;
+            font-size: 19px;
+            background-image: linear-gradient(120deg, blue 20%, rgb(45, 43, 52) 100%);
+        }
+        .button-submit:hover {
+            transform: scale(1.2);
+        }
+        .button-reset {
+            color: white;
+            font-weight: bold;
+            font-size: 19px;
+            width: 170px;
+            height: 33px;
+            border-radius: 30px;
+            transition: transform 0.3s;
+            background-image: linear-gradient(120deg, rgb(237, 32, 32) 20%, rgb(228, 167, 167) 100%);
+        }
+        .button-reset:hover {
+            transform: scale(1.2);
+        }
+        .b {
+            margin-left:10px;
+            background-image: linear-gradient(130deg, blue 20%, red 100%);
+            color: white;
+            transition: transform 0.3s;
+            width: 400px; /* Modified width */
+            height: 50px; /* Modified height */
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+        }
+        .b:hover {
+            transform: scale(1.2);
+        }
+    </style>
+    <script>
+        function cal(form) {
+            form.kelvin.value = parseFloat(form.celsius.value) + 273.15;
+            form.fahrenheit.value = (parseFloat(form.celsius.value) * 9/5) + 32;
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <b class="b">Temperature Converter</b>
+            <div class="inner-container">
+                Celsius<br>
+                <input type="text" name="celsius" placeholder="Enter Temp(c)"><br><br>
+                Kelvin<br>
+                <input type="text" name="kelvin"><br><br>
+                Fahrenheit<br>
+                <input type="text" name="fahrenheit"><br><br>
+                <button type="button" value="calculate" name="calculate" class="button-submit" onclick="return cal(this.form)">Calculate</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="reset" name="Reset" class="button-reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
